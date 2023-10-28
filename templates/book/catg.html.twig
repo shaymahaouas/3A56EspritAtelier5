@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>nb science Fiction</title>
+</head>
+<body>
+   
+
+ 
+    <h1>Books</h1>
+    <form method="get" action="{{ path('searchbook') }}">
+        <label for="bookId">search by ID:</label>
+        <input type="text" name="bookId" id="bookId" />
+        <button type="submit">Search</button>
+    </form>
+<table border="3">
+       <tr>
+        <td>id</td>
+        <td>Title</td>
+       
+        <td>publicationDate</td>
+        <td>published</td>
+        <td>Category</td>
+        <td>author</td>
+        <td>Action</td>
+        
+    </tr>
+   
+        {% for book in book %}
+           <tr>
+        <td>{{book.id}}</td>
+        <td>{{book.Title | upper}}</td>
+        <td>{{book.publicationDate | date()}}</td>
+        <td>{{book.published }}</td>
+        <td>{{book.category}}</td>
+        <td>{{book.author.username}}</td>
+    
+    </tr>
+
+        {% endfor %}
+        
+    </table> <td><a href="{{path('addbook')}}">Create new book </a>
+</body>
+</html>
+    <p>number of "Science Fiction" is : {{ count }}</p>
+      <p>number of published books : {{ pub }}</p>
+</body>
+</html>

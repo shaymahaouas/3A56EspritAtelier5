@@ -1,0 +1,14 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Liste des auteurs par adresse e-mail</title>
+</head>
+<body>
+    <h1>Liste des auteurs par adresse e-mail</h1>
+    <ul>
+        {% for author in authors %}
+            <li>{{ author.username}} ({{ author.email }})</li>
+        {% endfor %}
+    </ul>
+</body>
+</html>
